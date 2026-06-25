@@ -259,7 +259,7 @@ export default function PremiumPortfolio() {
               🚀
             </div>
             <h4 className="text-2xl font-bold mb-3">Dashboard IA</h4>
-            <p className="text-white/60">Painel moderno com experiência premium.</p>
+            <p className="text-white/60">Painel moderno com experiência premium. </p>
           </div>
 
           {/* CARD 3 - Portfólio Interativo */}
