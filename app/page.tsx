@@ -241,7 +241,7 @@ export default function PremiumPortfolio() {
 
           {/* CARD 1 - Site Futurista — ALTERADO: agora é um <a> clicável que abre o site */}
           <a
-            href="https://portfolio-premiium.vercel.app/#home"
+            href="https://futurist-site.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             className="group rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 hover:-translate-y-3 transition duration-500 shadow-2xl block cursor-pointer"
