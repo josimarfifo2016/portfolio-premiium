@@ -50,13 +50,9 @@ export default function PremiumPortfolio() {
   useEffect(() => {
 
     const handleMouseMove = (e: MouseEvent) => {
-
       const x = (window.innerWidth / 2 - e.clientX) / 25;
-
       const y = (window.innerHeight / 2 - e.clientY) / 25;
-
       setPosition({ x, y });
-
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -72,36 +68,26 @@ export default function PremiumPortfolio() {
   }, []);
 
   /* LOADING SCREEN */
-
   if (loading) {
-
     return (
-
       <div className="fixed inset-0 bg-black flex flex-col items-center justify-center overflow-hidden z-[9999]">
 
-        {/* Glow */}
+        {/* Glow de fundo */}
         <div className="absolute w-96 h-96 bg-cyan-500/20 blur-3xl rounded-full animate-pulse" />
 
-        {/* Loader */}
+        {/* Spinner duplo */}
         <div className="relative">
-
           <div className="w-40 h-40 rounded-full border border-cyan-400/20 border-t-cyan-400 animate-spin" />
-
           <div className="absolute inset-6 rounded-full border border-purple-500/20 border-b-purple-500 animate-spin" />
-
         </div>
 
         {/* Nome */}
         <h1 className="mt-10 text-5xl font-black tracking-widest bg-linear-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-
           JOSIMAR
-
         </h1>
 
         <p className="mt-4 text-white/50 tracking-[0.4em] uppercase text-sm">
-
           Loading Experience
-
         </p>
 
       </div>
@@ -109,45 +95,25 @@ export default function PremiumPortfolio() {
   }
 
   return (
-
     <div className="min-h-screen bg-black text-white overflow-hidden relative">
 
-      {/* BACKGROUND GLOW */}
+      {/* BACKGROUND GLOW - canto superior esquerdo */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500/20 blur-3xl rounded-full" />
 
+      {/* BACKGROUND GLOW - canto inferior direito */}
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/20 blur-3xl rounded-full" />
 
-      {/* PARTICLES */}
+      {/* PARTICLES - partículas animadas de fundo */}
       <ParticlesAny
         id="tsparticles"
         init={particlesInit}
         options={{
-
-          fullScreen: {
-            enable: false,
-          },
-
-          background: {
-            color: {
-              value: "transparent",
-            },
-          },
-
+          fullScreen: { enable: false },
+          background: { color: { value: "transparent" } },
           fpsLimit: 120,
-
           particles: {
-
-            number: {
-              value: 80,
-              density: {
-                enable: true,
-              },
-            },
-
-            color: {
-              value: "#00ffff",
-            },
-
+            number: { value: 80, density: { enable: true } },
+            color: { value: "#00ffff" },
             links: {
               enable: true,
               distance: 150,
@@ -155,42 +121,14 @@ export default function PremiumPortfolio() {
               opacity: 0.2,
               width: 1,
             },
-
-            move: {
-              enable: true,
-              speed: 1,
-            },
-
-            opacity: {
-              value: 0.5,
-            },
-
-            size: {
-              value: {
-                min: 1,
-                max: 3,
-              },
-            },
+            move: { enable: true, speed: 1 },
+            opacity: { value: 0.5 },
+            size: { value: { min: 1, max: 3 } },
           },
-
           interactivity: {
-
-            events: {
-
-              onHover: {
-                enable: true,
-                mode: "repulse",
-              },
-            },
-
-            modes: {
-
-              repulse: {
-                distance: 120,
-              },
-            },
+            events: { onHover: { enable: true, mode: "repulse" } },
+            modes: { repulse: { distance: 120 } },
           },
-
           detectRetina: true,
         }}
         className="absolute inset-0 z-0"
@@ -204,23 +142,10 @@ export default function PremiumPortfolio() {
         </h1>
 
         <nav className="hidden md:flex gap-8 text-sm text-white/70">
-
-          <Link href="#home" className="hover:text-white transition">
-            Home
-          </Link>
-
-          <Link href="#projects" className="hover:text-white transition">
-            Projetos
-          </Link>
-
-          <Link href="#skills" className="hover:text-white transition">
-            Skills
-          </Link>
-
-          <Link href="/contato" className="hover:text-cyan-400 transition">
-            Contato
-          </Link>
-
+          <Link href="#home" className="hover:text-white transition">Home</Link>
+          <Link href="#projects" className="hover:text-white transition">Projetos</Link>
+          <Link href="#skills" className="hover:text-white transition">Skills</Link>
+          <Link href="/contato" className="hover:text-cyan-400 transition">Contato</Link>
         </nav>
 
       </header>
@@ -231,49 +156,37 @@ export default function PremiumPortfolio() {
         className="relative z-10 flex flex-col items-center justify-center text-center px-6 min-h-[90vh]"
       >
 
-        {/* FOTO */}
+        {/* FOTO com efeito parallax no mouse */}
         <div
-          style={{
-            transform: `translate(${position.x}px, ${position.y}px)`,
-          }}
+          style={{ transform: `translate(${position.x}px, ${position.y}px)` }}
           className="w-56 h-56 rounded-full overflow-hidden border border-cyan-400/30 bg-white/5 backdrop-blur-xl flex items-center justify-center shadow-[0_0_100px_rgba(34,211,238,0.35)] hover:scale-105 transition duration-300"
         >
-
           <img
             src="/images/foto.png"
             alt="Josimar"
             className="w-full h-full object-cover"
           />
-
         </div>
 
         {/* NOME */}
-        <h3 className="text-3xl font-bold mt-8">
-          Josimar Rodrigues
-        </h3>
+        <h3 className="text-3xl font-bold mt-8">Josimar Rodrigues</h3>
+        <p className="text-cyan-400 mt-2 text-lg">Full Stack Developer</p>
 
-        <p className="text-cyan-400 mt-2 text-lg">
-          Full Stack Developer
-        </p>
-
-        {/* TITULO */}
+        {/* TÍTULO PRINCIPAL */}
         <h2 className="mt-10 text-5xl md:text-7xl font-black leading-tight max-w-5xl">
-
           Criando experiências digitais
-
           <span className="block bg-linear-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-             premium
+            premium
           </span>
-
         </h2>
 
-        {/* TEXTO */}
+        {/* DESCRIÇÃO */}
         <p className="mt-6 text-white/60 max-w-2xl text-lg">
           Desenvolvedor focado em interfaces modernas,
           animações premium e experiências interativas.
         </p>
 
-        {/* BOTÕES */}
+        {/* BOTÕES DE AÇÃO */}
         <div className="mt-10 flex flex-wrap gap-4 justify-center">
 
           <Link href="#projects" className="px-8 py-4 rounded-2xl bg-white text-black font-semibold hover:scale-105 transition duration-300 shadow-2xl inline-flex items-center justify-center">
@@ -320,68 +233,42 @@ export default function PremiumPortfolio() {
       >
 
         <div className="flex items-center justify-between mb-12">
-
-          <h3 className="text-4xl font-bold">
-            Projetos Premium
-          </h3>
-
-          <span className="text-white/40">
-            2026
-          </span>
-
+          <h3 className="text-4xl font-bold">Projetos Premium</h3>
+          <span className="text-white/40">2026</span>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
 
-          {/* CARD 1 */}
-          <div className="group rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 hover:-translate-y-3 transition duration-500 shadow-2xl">
-
+          {/* CARD 1 - Site Futurista — ALTERADO: agora é um <a> clicável que abre o site */}
+          <a
+            href="https://portfolio-premiium.vercel.app/#home"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 hover:-translate-y-3 transition duration-500 shadow-2xl block cursor-pointer"
+          >
             <div className="h-56 rounded-2xl bg-linear-to-br from-purple-500/30 to-cyan-500/20 mb-6 flex items-center justify-center text-6xl">
               ✨
             </div>
+            <h4 className="text-2xl font-bold mb-3">Site Futurista</h4>
+            <p className="text-white/60">Landing page moderna com animações premium.</p>
+          </a>
 
-            <h4 className="text-2xl font-bold mb-3">
-              Site Futurista
-            </h4>
-
-            <p className="text-white/60">
-              Landing page moderna com animações premium.
-            </p>
-
-          </div>
-
-          {/* CARD 2 */}
+          {/* CARD 2 - Dashboard IA */}
           <div className="group rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 hover:-translate-y-3 transition duration-500 shadow-2xl">
-
             <div className="h-56 rounded-2xl bg-linear-to-br from-pink-500/30 to-orange-500/20 mb-6 flex items-center justify-center text-6xl">
               🚀
             </div>
-
-            <h4 className="text-2xl font-bold mb-3">
-              Dashboard IA
-            </h4>
-
-            <p className="text-white/60">
-              Painel moderno com experiência premium.
-            </p>
-
+            <h4 className="text-2xl font-bold mb-3">Dashboard IA</h4>
+            <p className="text-white/60">Painel moderno com experiência premium.</p>
           </div>
 
-          {/* CARD 3 */}
+          {/* CARD 3 - Portfólio Interativo */}
           <div className="group rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 hover:-translate-y-3 transition duration-500 shadow-2xl">
-
             <div className="h-56 rounded-2xl bg-linear-to-br from-cyan-500/30 to-blue-500/20 mb-6 flex items-center justify-center text-6xl">
               🎨
             </div>
-
-            <h4 className="text-2xl font-bold mb-3">
-              Portfólio Interativo
-            </h4>
-
-            <p className="text-white/60">
-              Interface estilo Apple com animações suaves.
-            </p>
-
+            <h4 className="text-2xl font-bold mb-3">Portfólio Interativo</h4>
+            <p className="text-white/60">Interface estilo Apple com animações suaves.</p>
           </div>
 
         </div>
@@ -405,7 +292,6 @@ export default function PremiumPortfolio() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-
           {skills.map(({ name, Icon, color }, index) => (
             <div
               key={index}
@@ -415,7 +301,6 @@ export default function PremiumPortfolio() {
               <p className="font-semibold mt-2">{name}</p>
             </div>
           ))}
-
         </div>
 
       </section>
@@ -443,7 +328,12 @@ export default function PremiumPortfolio() {
               Entrar em Contato
             </Link>
 
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/10 transition duration-300">
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/10 transition duration-300"
+            >
               LinkedIn
             </a>
 
@@ -455,4 +345,5 @@ export default function PremiumPortfolio() {
 
     </div>
   );
+}
 }
